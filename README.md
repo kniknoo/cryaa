@@ -1,5 +1,6 @@
 # cryaa
 [![GitHub release](https://img.shields.io/github/release/kniknoo/cryaa.svg)](https://github.com/kniknoo/cryaa/releases)
+
 Ascii Art Library written in Crystal
 
 ## Installation
