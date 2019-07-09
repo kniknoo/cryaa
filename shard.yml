@@ -1,6 +1,9 @@
 name: cryaa
 version: 0.1.0
 
+description: |
+  A library to generate ASCII Art from images
+
 authors:
   - Nicholas Rake <penguin@hierobots.tech>
 

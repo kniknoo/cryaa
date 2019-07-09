@@ -22,6 +22,8 @@ require "cryaa"
 
 The file asciiart.cr can be run as a quick example, include a png file to open
 
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://github.com/kniknoo/cryaa/docs)
+
 ## Development
 
 TODO: Write development instructions here
