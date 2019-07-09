@@ -1,6 +1,6 @@
 # cryaa
 
-TODO: Write a description here
+Ascii Art Library written in Crystal
 
 ## Installation
 
@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      cryaa:
-       github: your-github-user/cryaa
+       github: kniknoo/cryaa
    ```
 
 2. Run `shards install`
@@ -20,7 +20,7 @@ TODO: Write a description here
 require "cryaa"
 ```
 
-TODO: Write usage instructions here
+The file asciiart.cr can be run as a quick example, include a png file to open
 
 ## Development
 
