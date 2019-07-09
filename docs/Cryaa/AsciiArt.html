@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.29.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="">
+  <title>Cryaa::AsciiArt - </title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="/Cryaa" data-name="cryaa">
+      <a href="../Cryaa.html">Cryaa</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="/Cryaa/AsciiArt" data-name="cryaa::asciiart">
+      <a href="../Cryaa/AsciiArt.html">AsciiArt</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Cryaa::AsciiArt
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Cryaa/AsciiArt.html">Cryaa::AsciiArt</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">StumpyPNG</li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28image%3ACanvas%29-class-method" class="signature"><strong>.new</strong>(image : Canvas)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#ascii%3AString%3F-instance-method" class="signature"><strong>#ascii</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ascii%3D%28ascii%3AString%3F%29-instance-method" class="signature"><strong>#ascii=</strong>(ascii : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#asciify-instance-method" class="signature"><strong>#asciify</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_h%3AUInt8-instance-method" class="signature"><strong>#box_h</strong> : UInt8</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_h%3D%28box_h%3AUInt8%29-instance-method" class="signature"><strong>#box_h=</strong>(box_h : UInt8)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_start%3F%28x%2Cy%29-instance-method" class="signature"><strong>#box_start?</strong>(x, y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_w%3AUInt8-instance-method" class="signature"><strong>#box_w</strong> : UInt8</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#box_w%3D%28box_w%3AUInt8%29-instance-method" class="signature"><strong>#box_w=</strong>(box_w : UInt8)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#character_index%28grey%29-instance-method" class="signature"><strong>#character_index</strong>(grey)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#chars%3AString-instance-method" class="signature"><strong>#chars</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#chars%3D%28chars%3AString%29-instance-method" class="signature"><strong>#chars=</strong>(chars : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grey_of_box%28x%2Cy%29-instance-method" class="signature"><strong>#grey_of_box</strong>(x, y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height%3AInt32-instance-method" class="signature"><strong>#height</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#height%3D%28height%3AInt32%29-instance-method" class="signature"><strong>#height=</strong>(height : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3ACanvas-instance-method" class="signature"><strong>#image</strong> : Canvas</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_grey%28r%2Cg%2Cb%29-instance-method" class="signature"><strong>#to_grey</strong>(r, g, b)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width%3AInt32-instance-method" class="signature"><strong>#width</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#width%3D%28width%3AInt32%29-instance-method" class="signature"><strong>#width=</strong>(width : Int32)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(image:Canvas)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(image : Canvas)
+
+        <a class="method-permalink" href="#new%28image%3ACanvas%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="ascii:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>ascii</strong> : String?
+
+        <a class="method-permalink" href="#ascii%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ascii=(ascii:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>ascii=</strong>(ascii : String?)
+
+        <a class="method-permalink" href="#ascii%3D%28ascii%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="asciify-instance-method">
+      <div class="signature">
+        
+        def <strong>asciify</strong>
+
+        <a class="method-permalink" href="#asciify-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_h:UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>box_h</strong> : UInt8
+
+        <a class="method-permalink" href="#box_h%3AUInt8-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_h=(box_h:UInt8)-instance-method">
+      <div class="signature">
+        
+        def <strong>box_h=</strong>(box_h : UInt8)
+
+        <a class="method-permalink" href="#box_h%3D%28box_h%3AUInt8%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_start?(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>box_start?</strong>(x, y)
+
+        <a class="method-permalink" href="#box_start%3F%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_w:UInt8-instance-method">
+      <div class="signature">
+        
+        def <strong>box_w</strong> : UInt8
+
+        <a class="method-permalink" href="#box_w%3AUInt8-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="box_w=(box_w:UInt8)-instance-method">
+      <div class="signature">
+        
+        def <strong>box_w=</strong>(box_w : UInt8)
+
+        <a class="method-permalink" href="#box_w%3D%28box_w%3AUInt8%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="character_index(grey)-instance-method">
+      <div class="signature">
+        
+        def <strong>character_index</strong>(grey)
+
+        <a class="method-permalink" href="#character_index%28grey%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="chars:String-instance-method">
+      <div class="signature">
+        
+        def <strong>chars</strong> : String
+
+        <a class="method-permalink" href="#chars%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="chars=(chars:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>chars=</strong>(chars : String)
+
+        <a class="method-permalink" href="#chars%3D%28chars%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grey_of_box(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>grey_of_box</strong>(x, y)
+
+        <a class="method-permalink" href="#grey_of_box%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>height</strong> : Int32
+
+        <a class="method-permalink" href="#height%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="height=(height:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>height=</strong>(height : Int32)
+
+        <a class="method-permalink" href="#height%3D%28height%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image:Canvas-instance-method">
+      <div class="signature">
+        
+        def <strong>image</strong> : Canvas
+
+        <a class="method-permalink" href="#image%3ACanvas-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_grey(r,g,b)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_grey</strong>(r, g, b)
+
+        <a class="method-permalink" href="#to_grey%28r%2Cg%2Cb%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>width</strong> : Int32
+
+        <a class="method-permalink" href="#width%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="width=(width:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>width=</strong>(width : Int32)
+
+        <a class="method-permalink" href="#width%3D%28width%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -20,7 +20,6 @@ module Cryaa
       @box_w = 3
       @box_h = 6
       @ascii = asciify.not_nil!
-      return @ascii
     end
 
     def asciify
@@ -62,7 +61,7 @@ module Cryaa
           sum += to_grey(*@image[x + box_x, y + box_y].to_rgb8)
         end
       end
-      return sum / (@box_w * @box_h)
+      sum / (@box_w * @box_h)
     end
 
     def box_start?(x, y)
