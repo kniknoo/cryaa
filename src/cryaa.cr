@@ -5,11 +5,11 @@ require "stumpy_png"
 module Cryaa
   VERSION = "0.1.0"
 
-  class AsciiArt
+  struct AsciiArt
     include StumpyPNG
 
     getter image : Canvas
-    property ascii : String | Nil, chars : String, box_w : UInt8, box_h : UInt8
+    property ascii : Array(String) , chars : String, box_w : UInt8, box_h : UInt8
     property width : Int32, height : Int32
 
     def initialize(image : Canvas)
@@ -19,15 +19,15 @@ module Cryaa
       @chars = "###@@@@%%%%&&&&****!!!!^^^^----''',,,..    ".reverse
       @box_w = 3
       @box_h = 6
-      @ascii = asciify
-      puts @ascii
+      @ascii = asciify.not_nil!
+      return @ascii
     end
 
     def asciify
       line = [] of String
       @height.times do |y|
         y2 = y + @box_h
-        return line.join if y2 > @image.height
+        return line if y2 > @image.height
         @width.times do |x|
           x2 = x + @box_w
           if box_start?(x, y)
