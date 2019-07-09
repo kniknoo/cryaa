@@ -9,7 +9,7 @@ module Cryaa
     include StumpyPNG
 
     getter image : Canvas
-    property ascii : Array(String) , chars : String, box_w : UInt8, box_h : UInt8
+    property ascii : Array(String), chars : String, box_w : UInt8, box_h : UInt8
     property width : Int32, height : Int32
 
     def initialize(image : Canvas)

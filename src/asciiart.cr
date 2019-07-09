@@ -8,17 +8,15 @@ if ARGV.size == 0
 end
 
 puts "reps:"
-reps = gets.not_nil!.to_i 
+reps = gets.not_nil!.to_i
 start = Time.monotonic
 
 reps.times do
-
-aa_array = [] of String | Colorize::Object(String)
-system "clear"
-aa = Cryaa::AsciiArt.new(StumpyPNG.read(ARGV.first))
-aa.ascii.each {|x| aa_array << x.colorize(Colorize::Color256.new(rand(255).to_u8))}
-puts aa_array.join
-
+  aa_array = [] of String | Colorize::Object(String)
+  system "clear"
+  aa = Cryaa::AsciiArt.new(StumpyPNG.read(ARGV.first))
+  aa.ascii.each { |x| aa_array << x.colorize(Colorize::Color256.new(rand(255).to_u8)) }
+  puts aa_array.join
 end
 
 puts "#{reps} repetitions in #{Time.monotonic - start}"
