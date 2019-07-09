@@ -1,0 +1,14 @@
+name: cryaa
+version: 0.1.0
+
+authors:
+  - Nicholas Rake <penguin@hierobots.tech>
+
+dependencies:
+  stumpy_png:
+    github: stumpycr/stumpy_png
+    version: "~> 4.4.1"
+
+crystal: 0.29.0
+
+license: MIT
