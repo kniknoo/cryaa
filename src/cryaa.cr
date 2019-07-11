@@ -1,44 +1,48 @@
 # TODO: Write documentation for `Cryaa`
 
 require "stumpy_png"
+require "colorize"
+require "./helpers"
 
 module Cryaa
   VERSION = "0.1.0"
 
   struct AsciiArt
     include StumpyPNG
+    include Helpers
 
     getter image : Canvas
-    property ascii : Array(String), chars : String, box_w : UInt8, box_h : UInt8
+    property ascii : Array(Char), chars : String, box_w : UInt8, box_h : UInt8
     property width : Int32, height : Int32
+    property boxes_x : Array(Int32), boxes_y : Array(Int32)
+    property grid : Array(Tuple(Int32, Int32))
 
     def initialize(image : Canvas)
       @image = image
       @width = image.width
       @height = image.height
-      @chars = "###@@@@%%%%&&&&****!!!!^^^^----''',,,..    ".reverse
       @box_w = 3
       @box_h = 6
-      @ascii = asciify.not_nil!
+      @boxes_x = quantize(@width, @box_w)
+      @boxes_y = quantize(@height, @box_h)
+      @grid = generate_grid(@boxes_x, @boxes_y)
+      @chars = "###@@@@%%%%&&&&****!!!!^^^^----''',,,..    ".reverse
+      @ascii = asciify
     end
 
+    def show
+      system "clear"
+      @ascii.each_slice(@boxes_x.size) { |row| puts row.join}
+    end
+    
+    def color_show(color)
+      system "clear"
+      @ascii.each_slice(@boxes_x.size) { |row| puts row.join.colorize(color)}
+    end
+    
     def asciify
-      line = [] of String
-      @height.times do |y|
-        y2 = y + @box_h
-        return line if y2 > @image.height
-        @width.times do |x|
-          x2 = x + @box_w
-          if box_start?(x, y)
-            if x2 > @width
-              line << "\n"
-              next
-            else
-              line << character_index(grey_of_box(x, y)).to_s
-            end
-          end
-        end
-      end
+      #take in an image and return a character representation
+      grid.map { |x, y| character_index(grey_of_box(x, y))}
     end
 
     def character_index(grey)
@@ -48,13 +52,8 @@ module Cryaa
       @chars[char_index]
     end
 
-    def to_grey(r, g, b)
-      # returns the average of an rgb value
-      (r.to_u16 + g.to_u16 + b.to_u16) / 3
-    end
-
     def grey_of_box(x, y)
-      # take in a canvas, x, y, , y2 and return a value of grey
+      # take in an x,y and return a value of grey
       sum = 0
       @box_h.times do |box_y|
         @box_w.times do |box_x|
@@ -63,10 +62,6 @@ module Cryaa
       end
       sum / (@box_w * @box_h)
     end
-
-    def box_start?(x, y)
-      # Time to start a new box?
-      x % @box_w == 0 && y % @box_h == 0
-    end
-  end
+    
+  end  
 end
