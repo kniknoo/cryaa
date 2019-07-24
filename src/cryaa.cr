@@ -15,7 +15,7 @@ module Cryaa
     property ascii : Array(Char), chars : String, box_w : UInt8, box_h : UInt8
     property width : Int32, height : Int32
     property boxes_x : Array(Int32), boxes_y : Array(Int32)
-    property grid : Array(Tuple(Int32, Int32))
+    property grid : Array(Tuple(Int32, Int32)), colorchart : Array(StumpyCore::RGBA)
 
     def initialize(image : Canvas)
       @image = image
@@ -27,9 +27,44 @@ module Cryaa
       @boxes_y = quantize(@height, @box_h)
       @grid = generate_grid(@boxes_x, @boxes_y)
       @chars = "###@@@@%%%%&&&&****!!!!^^^^----''',,,..    ".reverse
+      @colorchart = sample_image
       @ascii = asciify
     end
-
+    
+    def sample_image
+      # scan the image using the grid as an origin point for each block
+      grid.map {|x, y| average(color_of_box(x, y)) }
+    end
+    
+    def color_of_box(x, y)
+      #take in an x, y and return an array of the colors
+      (y...y2(y)).flat_map do |box_y| 
+        (x...x2(x)).map do |box_x| 
+          @image[box_x, box_y] 
+        end 
+      end
+    end
+    
+    def average(colors)
+        color_avg = [0, 0, 0]
+        # Take in an RGBA value and return the average
+        colors.each do |color| 
+          color_avg[0] += color.r
+          color_avg[1] += color.g
+          color_avg[2] += color.b
+        end
+        color_avg.each {|color| color = (color / colors.size)}
+        RGBA.new(color_avg[0].to_u16, color_avg[1].to_u16, color_avg[2].to_u16)
+    end
+    
+    def y2(y)
+      y + @box_h
+    end
+    
+    def x2(x)
+      x + @box_w
+    end
+    
     def show
       system "clear"
       @ascii.each_slice(@boxes_x.size) { |row| puts row.join}
@@ -37,12 +72,15 @@ module Cryaa
     
     def color_show(color)
       system "clear"
-      @ascii.each_slice(@boxes_x.size) { |row| puts row.join.colorize(color)}
+      @ascii.each_slice(@boxes_x.size) { |row| puts row.join.colorize(color)}.to_rgb8
     end
     
     def asciify
       #take in an image and return a character representation
       grid.map { |x, y| character_index(grey_of_box(x, y))}
+      #@colorchart.map do |color| 
+      #  character_index(to_grey(color))
+      #end
     end
 
     def character_index(grey)
@@ -57,7 +95,7 @@ module Cryaa
       sum = 0
       @box_h.times do |box_y|
         @box_w.times do |box_x|
-          sum += to_grey(*@image[x + box_x, y + box_y].to_rgb8)
+          sum += to_grey(@image[x + box_x, y + box_y].to_rgb8)
         end
       end
       sum / (@box_w * @box_h)

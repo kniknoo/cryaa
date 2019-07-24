@@ -8,13 +8,16 @@ if ARGV.size == 0
   exit
 end
 
-puts "reps:"
-reps = gets.not_nil!.to_i
-start = Time.monotonic
-reps.times do
+#puts "reps:"
+#reps = gets.not_nil!.to_i
+#start = Time.monotonic
+#reps.times do
   aa = Cryaa::AsciiArt.new(StumpyPNG.read(ARGV.first))
-  puts aa.color_show(Colorize::Color256.new(rand(255).to_u8))
-end
+  #puts aa.color_show(Colorize::Color256.new(rand(255).to_u8))
+  #puts aa.colorchart
+  #puts aa.grid.size
+  aa.show
+#end
 
-puts "#{reps} repetitions in #{Time.monotonic - start}"
-puts "Made for #{ENV["USER"].upcase}"
+#puts "#{reps} repetitions in #{Time.monotonic - start}"
+#puts "Made for #{ENV["USER"].upcase}"

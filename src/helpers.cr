@@ -9,8 +9,9 @@ module Helpers
     (0..dimension).select{|x| x % b_dimension == 0 && x + b_dimension < dimension}
   end
   
-  def to_grey(r, g, b)
+  def to_grey(color)
     # returns the average of an rgb value
-    (r.to_u16 + g.to_u16 + b.to_u16) / 3
+    #(color.r + color.g + color.b) / 3
+    (color[0].to_u16 + color[1].to_u16 + color[2].to_u16) / 3
   end
 end
